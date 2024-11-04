@@ -1,0 +1,75 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+/* Navigation Buttons */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+
+.nav button {
+  padding: 0.5em 1em;
+  background: #333;
+  color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav button:hover {
+  background: #555;
+}
+
+.nav button.active {
+  background: #007acc;
+}
+
+/* Slider Sections */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.section {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%;
+  transition: 0.6s ease;
+  opacity: 0;
+}
+
+.section.active {
+  left: 0;
+  opacity: 1;
+}
