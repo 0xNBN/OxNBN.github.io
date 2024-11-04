@@ -1,13 +1,13 @@
 function showSection(sectionId) {
-  // Remove active class from all sections
+  // Hide all sections by removing 'active' class
   document.querySelectorAll('.section').forEach(section => {
     section.classList.remove('active');
   });
 
-  // Set the clicked section as active
+  // Activate the selected section with a blur transition
   document.getElementById(sectionId).classList.add('active');
   
-  // Remove active class from all buttons and highlight the selected one
+  // Remove active state from all buttons and highlight the selected one
   document.querySelectorAll('.nav button').forEach(button => {
     button.classList.remove('active');
   });

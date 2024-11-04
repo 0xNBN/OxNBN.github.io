@@ -3,41 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Profile</title>
+  <title>0xNBN</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Main Container -->
+  <!-- Main Container with Terminal Border -->
   <div class="container">
-    <h1 class="header">Your Nerdy Quant & Dev Profile</h1>
+    <h1 class="header">0xNBN : Nicolas</h1>
     
-    <!-- Navigation Panel -->
+    <!-- Navigation Panel with Intro Button -->
     <div class="nav">
-      <button onclick="showSection('quant')">Quant Trader & Researcher</button>
-      <button onclick="showSection('dev')">Quant Developer</button>
+      <button class="intro" onclick="showSection('intro')">Intro</button>
+      <button onclick="showSection('quant')">Quant</button>
       <button onclick="showSection('fullstack')">Fullstack Dev (SOL)</button>
     </div>
 
-    <!-- Sliding Sections -->
+    <!-- Sliding Sections with Blur Transition -->
     <div class="slider">
-      <div id="quant" class="section active">
-        <h2>Quant Trader & Researcher</h2>
-        <p>Detail your quant and trading research, algorithms, and strategies here.</p>
-        <p>Maybe list a few key technologies: Python, R, time series analysis, or machine learning for trading.</p>
+      <div id="intro" class="section active">
+        <h2>Intro</h2>
+        <br>
+
+
+        <p>Hi there ! I'm an engineer with an Msc in quant finance. I spent a few years  working on G10 currencies & XCCY in a trading room (Excel VBA R). I then spent a few years working on market risks in tradfi and in crypto startups (Python, ts, rust). I also built several smart contract using Anchor. </p>
+
+        <br>
+	     <p>Pro interests : pipelines, data, processing, real time constraints, time series prediction & metrics engineering, modelling, statistics, ML <p>
+		<br>
+	     <p>Perso interests : robotics, permaculture & biotop optimization, <p>
+	     <br>
+	     <p>Mandatory skills to develop the above interests : Smart contract dev, Fullstack dev, Backend dev, Quant dev, VPS, database, APIs, indexers & real time monitoring tools<p>
+	     <br>
+	     <p>I love to find solutions from math problems in nature. </p>
+	     <p>I love hierachizing the information in a sea of noise.<p>
+
+    
+      </div>
+      
+      <div id="quant" class="section">
+        <h2>Quant</h2>
+        <br>
+        <p>Professional experience :  </p>
+        <br>
+        <p>Strategist G10 currencies & XCCY @ French Bank Trading Room (2y)</p>
+        <p>Risk manager for a desk of EUR & USD swap traders @ French Bank (2y)</p>
+        <p>Quant risk manager for a SOL lending protocol (1y)</p>
+        <p>Quant pipeline developper for SOL onchain data (2y)</p>
+        <p><a href="https://www.linkedin.com/in/nicolas-blanchard-971489b5/">See More</a></p>
+        <br>
+        <p>Side projects  :  </p>
+        <p>Quant research & dev on $BTC : Tensorflow, visualization tools, data pipelines</p>
+        <p>Custom visualization tools : <a href="https://futurexfinance.xyz/analytics/"> here </a> is an example with live, realtime $BTC CVD built in Vue.js</p>
+        <p>Live trackrecord for ML & arbitrage strategies: <a href="https://futurexfinance.xyz/vaults">here</a></p>
+
+        <br>
+
+         <p>Relevant repo : </p>
+         <br>
+         <p><a href="https://github.com/0xNBN/rust_ws_trades">A simple ws connection for Binance in Rust</a></p>
+          <p><a href="https://github.com/0xNBN/paradex_vault_manager">A wrapper to connect to Paradex Vaults as a Manager</a></p>
+           <p><a href="https://github.com/0xNBN/rust_copula">A copula estimation used to deduct risk regimes built in Rust</a> (in progress)</p>
       </div>
       
       <div id="dev" class="section">
         <h2>Quant Developer</h2>
         <p>Showcase your software engineering skills for quant tools and infrastructure.</p>
-        <p>Mention tech like C++, Java, or SQL and frameworks you’ve built or maintained for trading desks.</p>
+        <p>Mention technologies like C++, Java, SQL, and the frameworks you've built for trading desks.</p>
       </div>
       
       <div id="fullstack" class="section">
-        <h2>Fullstack Developer (Specialized in SOL)</h2>
-        <p>Highlight your expertise in SOL development, smart contracts, and web3 development.</p>
-        <p>Technologies could include Rust, React, and blockchain tooling like Metaplex or Anchor.</p>
+        <h2>Fullstack Developer (Anchor SOL)</h2>
+        <br>
+        <p>Professional experience :  </p>
+        <br>
+        <p>Onchain dev @ SOL Startup (1y): <a href="https://solscan.io/account/3XeZoQirC8ZvHJn1Qy875g4Z7GFoAocrrzcjgxbfm22E">See on Solscan</a> 
+        <p>Onchain Risk Engine Calibration @ SOL Startup (1y): <a href="https://docs.ratio.finance/">The docs</a> </p>
+        <p>Backend Dev @ Sol data startup (2y): <a href="https://www.fibonacci.fi/">The docs</a></p>
+        <p>Onchain, backend, frontend Dev @ Colosseum Hackation : <a href="https://github.com/Vayoo-Labs">Repo</a></p>
+        <p>Frontend Dev @ SOL startup : <a href="https://futurexfinance.xyz/">Website</a></p> <a href="https://futurexfinance.xyz/analytics/">Custom charts with websockets</a></p>
+
+        <br>
+        <p>Side projects (In progress) :  </p>
+        <br>
+        <p><a href="https://github.com/0xNBN/swap">A swap program build with Anchor.</a></p>
+        <p><a href="https://github.com/0xNBN/lend">A lending program built with Anchor</a></p>
+        <p>
       </div>
+    </div>
+
+    <!-- Typing Cursor Effect -->
+    <div class="typing-area">
+      <span class="typing-text">Awaiting command...</span><span class="cursor">|</span>
     </div>
   </div>
 

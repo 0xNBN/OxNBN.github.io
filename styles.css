@@ -3,12 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #1e1e1e; /* Dark gray background */
+  color: #a8ff60; /* Softer mint green */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,19 +16,28 @@ body {
   overflow: hidden;
 }
 
+/* Terminal-Like Container */
 .container {
   width: 90%;
   max-width: 800px;
-  text-align: center;
+  text-align: left;
+  border: 2px solid #a8ff60; /* Minty green border */
+  padding: 20px;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  height: 90vh;
+  overflow: hidden;
 }
 
 /* Header */
 .header {
-  font-size: 2em;
+  font-size: 1.8em;
   margin-bottom: 1em;
+  color: #a8ff60;
+  text-shadow: 0 0 5px #a8ff60;
 }
 
-/* Navigation Buttons */
+/* Navigation Buttons with Blur Effect */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -37,39 +46,129 @@ body {
 
 .nav button {
   padding: 0.5em 1em;
-  background: #333;
-  color: #e0e0e0;
-  border: none;
+  background: #444;
+  color: #a8ff60;
+  border: 1px solid #a8ff60;
   cursor: pointer;
-  transition: 0.3s ease;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  filter: blur(3px); /* Initial blur effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .nav button:hover {
-  background: #555;
+  background: #5a5a5a;
+  color: #fff;
+  filter: blur(0); /* Clear blur on hover */
+}
+
+.nav .intro {
+  filter: blur(0); /* Keep Intro button clear */
 }
 
 .nav button.active {
-  background: #007acc;
+  background: #4c8ed9;
+  filter: blur(0); /* Clear blur for active button */
 }
 
-/* Slider Sections */
+/* Scrollable Individual Sections */
 .slider {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: calc(100% - 80px); /* Adjust height to allow scrolling within each section */
   overflow: hidden;
 }
 
+/* Each section has its own scrollable content */
 .section {
   position: absolute;
   width: 100%;
-  top: 0;
-  left: 100%;
-  transition: 0.6s ease;
+  height: 100%;
+  overflow-y: auto; /* Scrollable if content overflows */
+  padding: 10px;
   opacity: 0;
+  transition: all 0.8s ease;
+  left: 100%;
+  
+  /* Background image with positioning */
+  background-image: url('geotrouvetout_2.png'); /* Replace with your image path */
+  background-size: auto 20%; /* Adjust size to occupy a portion of the area */
+  background-position: right bottom; /* Position in the lower right */
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: blur(8px); /* Apply blur effect to the background image */
+}
+
+/* Overlay for readability */
+.section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.7); /* Dark overlay to make text readable */
+  z-index: 1; /* Ensure overlay is above the image but below text */
 }
 
 .section.active {
   left: 0;
   opacity: 1;
+  filter: none; /* Clear blur on active section */
+}
+
+.section .content {
+  position: relative;
+  z-index: 2; /* Ensure text is above the overlay */
+  color: #a8ff60; /* Text color for better visibility */
+}
+
+/* Link Styles */
+a {
+  color: #a8ff60; /* Mint green for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #4c8ed9; /* Change color on hover */
+  text-decoration: underline; /* Underline on hover for visibility */
+}
+
+/* Custom Scrollbar for Sections */
+.section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background-color: #a8ff60;
+  border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+/* Typing Cursor Effect */
+.typing-area {
+  margin-top: 2em;
+  font-size: 1em;
+  color: #a8ff60;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.typing-text {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cursor {
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
